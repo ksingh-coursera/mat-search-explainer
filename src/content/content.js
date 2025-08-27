@@ -163,7 +163,7 @@ function debouncedProcessSearchResults() {
 function injectResponseInterceptor() {
   // Create and inject a script element that loads from the extension
   const script = document.createElement('script');
-  script.src = chrome.runtime.getURL('interceptor.js');
+  script.src = chrome.runtime.getURL('src/shared/interceptor.js');
   script.onload = function() {
     console.log('✅ Response interceptor script loaded');
     this.remove();

@@ -18,18 +18,18 @@
     "http://10.0.0.4:8080/*"
   ],
   "background": {
-    "service_worker": "background.js"
+    "service_worker": "src/background/background.js"
   },
   "content_scripts": [
     {
       "matches": ["https://www.coursera.org/*"],
-      "js": ["content.js"],
+      "js": ["src/content/content.js"],
       "run_at": "document_idle"
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["interceptor.js"],
+      "resources": ["src/shared/interceptor.js"],
       "matches": ["https://www.coursera.org/*"]
     }
   ],

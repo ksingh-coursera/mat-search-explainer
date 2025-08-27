@@ -21,13 +21,13 @@ A Chrome extension that provides real-time course performance metrics and AI-pow
 ### 1. Setup the Backend
 ```bash
 # Start Redis and load data
-docker compose -f docker/docker-compose-simple.yml up -d
+docker compose -f docker-compose-simple.yml up -d
 
 # Install Python dependencies
 pip install -r requirements.txt
 
 # Start the API server
-python3 src/api/api_server_8080.py
+python3 api_server_8080.py
 ```
 
 ### 2. Install Chrome Extension
@@ -41,44 +41,12 @@ python3 src/api/api_server_8080.py
 2. **Hover over any course card**
 3. See instant performance metrics and AI explanations!
 
-## 📁 Project Structure
-
-```
-├── src/
-│   ├── content/
-│   │   └── content.js              # Main content script
-│   ├── background/
-│   │   └── background.js           # Service worker
-│   ├── shared/
-│   │   └── interceptor.js          # GraphQL interceptor
-│   ├── api/
-│   │   ├── api_server_8080.py      # Main API server
-│   │   └── api_server_simple.py    # Alternative server
-│   ├── data/
-│   │   ├── load_data_simple.py     # Data loader
-│   │   └── query_data.py           # Data utilities
-│   └── scripts/
-│       └── test_integration.py     # Integration tests
-├── docker/
-│   ├── docker-compose-simple.yml  # Redis setup
-│   └── Dockerfile                 # Data loader container
-├── scripts/
-│   ├── start_simple.sh            # Quick start script
-│   └── launch_brave_dev.sh        # Browser launcher
-├── docs/
-│   ├── HOW_IT_WORKS.md            # System overview
-│   ├── SYSTEM_OVERVIEW.md         # Detailed architecture
-│   └── OPENAI_SETUP.md            # AI configuration
-├── manifest.json                  # Chrome extension config
-└── requirements.txt               # Python dependencies
-```
-
 ## 📖 Documentation
 
-- **[How It Works](docs/HOW_IT_WORKS.md)** - 30-second overview of the system
-- **[System Overview](docs/SYSTEM_OVERVIEW.md)** - Detailed architecture and components
-- **[OpenAI Setup](docs/OPENAI_SETUP.md)** - Configure AI explanations (optional)
-- **[Current Architecture](docs/CURRENT_ARCHITECTURE.md)** - Complete technical breakdown
+- **[How It Works](HOW_IT_WORKS.md)** - 30-second overview of the system
+- **[System Overview](SYSTEM_OVERVIEW.md)** - Detailed architecture and components
+- **[OpenAI Setup](OPENAI_SETUP.md)** - Configure AI explanations (optional)
+- **[Current Architecture](CURRENT_ARCHITECTURE.md)** - Complete technical breakdown
 
 ## 🎯 Use Cases
 
@@ -130,10 +98,10 @@ Python implementation...
 
 ## 🎪 Demo & Pitch Materials
 
-- **[Pitch Slides](docs/PITCH_SLIDES.md)** - Executive presentation
-- **[Production Pitch](docs/PRODUCTION_PITCH.md)** - Full business proposal for scaling
-- **[Technical Design](docs/TECHNICAL_DESIGN.md)** - Production architecture plan
+- **[Pitch Slides](PITCH_SLIDES.md)** - Executive presentation
+- **[Production Pitch](PRODUCTION_PITCH.md)** - Full business proposal for scaling
+- **[Technical Design](TECHNICAL_DESIGN.md)** - Production architecture plan
 
 ---
 
-*Transform Coursera search into an intelligence platform - see not just what courses appear, but why they appear and how they perform.*
+*Transform Coursera search into an intelligence platform - see not just what courses appear, but why they appear and how they perform.* 

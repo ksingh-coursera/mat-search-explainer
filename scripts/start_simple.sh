@@ -22,7 +22,7 @@ echo "✅ CSV file found"
 # Start the simple Redis setup
 echo ""
 echo "🔧 Starting Redis and loading data..."
-docker compose -f docker-compose-simple.yml up -d
+docker compose -f docker/docker-compose-simple.yml up -d
 
 echo ""
 echo "⏳ Waiting for data loading to complete..."
@@ -37,7 +37,7 @@ echo "🌐 Starting API bridge server..."
 echo "📡 API will be available at http://localhost:5001"
 
 # Start API server in background
-python3 api_server_simple.py > api_server.log 2>&1 &
+python3 src/api/api_server_simple.py > api_server.log 2>&1 &
 API_PID=$!
 
 sleep 3
@@ -69,8 +69,8 @@ echo "   curl http://localhost:5001/search/ai"
 echo "   curl http://localhost:5001/metrics/ai/mR7MlUaTEemuHQ4HpHozrA"
 echo ""
 echo "🛠️ Management:"
-echo "   Stop all: Ctrl+C (then run 'docker compose -f docker-compose-simple.yml down')"
-echo "   View Redis logs: docker compose -f docker-compose-simple.yml logs"
+echo "   Stop all: Ctrl+C (then run 'docker compose -f docker/docker-compose-simple.yml down')"
+echo "   View Redis logs: docker compose -f docker/docker-compose-simple.yml logs"
 echo "   View API logs: tail -f api_server.log"
 echo ""
 echo "⏳ API server running in background (PID: $API_PID)"
@@ -81,7 +81,7 @@ cleanup() {
     echo ""
     echo "🛑 Stopping services..."
     kill $API_PID 2>/dev/null
-    docker compose -f docker-compose-simple.yml down
+    docker compose -f docker/docker-compose-simple.yml down
     echo "✅ All services stopped!"
 }
 

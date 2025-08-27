@@ -13,13 +13,13 @@ services:
       - redis-network
 
   data-loader:
-    build: .
+    build: ..
     container_name: data-loader-simple
     depends_on:
       - redis
     volumes:
-      - .:/app
-    command: python3 load_data_simple.py
+      - ..:/app
+    command: python3 src/data/load_data_simple.py
     networks:
       - redis-network
 
