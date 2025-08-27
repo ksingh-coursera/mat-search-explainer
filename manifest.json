@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Coursera Search Intelligence",
+  "version": "2.0",
+  "description": "Provides AI-powered search explanations and performance metrics overlay for Coursera courses",
+  "permissions": [
+    "webRequest",
+    "activeTab",
+    "scripting",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://www.coursera.org/*",
+    "http://localhost:5001/*",
+    "http://localhost:8080/*",
+    "https://localhost:5443/*",
+    "http://127.0.0.1:8080/*",
+    "http://10.0.0.4:8080/*"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://www.coursera.org/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["interceptor.js"],
+      "matches": ["https://www.coursera.org/*"]
+    }
+  ],
+  "action": {
+    "default_title": "Toggle Coursera Search Intelligence"
+  }
+}

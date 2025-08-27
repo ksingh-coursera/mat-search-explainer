@@ -1,0 +1,43 @@
+# Logs
+*.log
+api_server.log
+
+# Environment variables
+.env
+.env.local
+
+# Node modules (if any)
+node_modules/
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Data files (large CSV)
+*.csv
+
+# Temporary files
+*.tmp
+*.temp
+
+# Docker volumes
+redis-data/
+
+# Test HTML files
+view-source_*.html
+
+# Backup files
+*.bak
+*.backup
